@@ -34,8 +34,14 @@
       replace: true,
       controller: function(){
         this.showForm = false;
+        this.book = {};
       },
-      controllerAs: 'reviewFormCtrl'
+      controllerAs: 'reviewFormCtrl',
+      // setting scope because you want access to parent controller (ReadingListController) information; you lose it when you declare a separate controller within the directive
+      scope: {
+        books: '=',
+        genres: '='
+      }
     };
   });
 

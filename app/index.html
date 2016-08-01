@@ -23,7 +23,7 @@
     <button class="btn btn-default" ng-click='reviewFormCtrl.showForm = !reviewFormCtrl.showForm'>{{reviewFormCtrl.showForm ? 'Cancel' : 'Create Review'}}</button>
     <hr />
     <!-- you have access to reviewFromCtrl anywhere inside the parent element of review-form -->
-    <review-form ng-show='reviewFormCtrl.showForm'></review-form>
+    <review-form books='readingListController.books' genres='readingListController.genres' ng-show='reviewFormCtrl.showForm'></review-form>
     <hr />
 
     <ul class="list-unstyled col-sm-8">
