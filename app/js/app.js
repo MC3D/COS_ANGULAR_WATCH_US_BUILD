@@ -4,7 +4,12 @@
   'use strict';
 
   // Declare app level module which depends on views, and components
-  angular.module('myApp', []);
+  var app = angular.module('readingList', []);
+
+  app.controller('ReadingListController', function(){
+    this.books = books;
+    this.genre = genres;
+  });
 
   var genres = [ 'fable', 'fantasy', 'fiction', 'folklore', 'horror', 'humor', 'legend', 'metafiction', 'mystery', 'mythology', 'non-fiction', 'poetry' ];
 
