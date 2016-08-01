@@ -4,9 +4,9 @@
   'use strict';
 
   // Declare app level module which depends on views, and components
-  var app = angular.module('readingList', []);
+  angular.module('readingList', [])
 
-  app.controller('ReadingListController', function(){
+  .controller('ReadingListController', function(){
     this.books = books;
     this.genres = genres;
   });
