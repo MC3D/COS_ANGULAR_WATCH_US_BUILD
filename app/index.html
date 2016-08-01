@@ -34,10 +34,10 @@
           <p class="goodRating">{{book.rating}}/5</p>
         </aside>
         <div class="col-sm-9">
-          <h3><a href="http://www.amazon.com/gp/product/{{book.isbn}}">Book Title</a></h3>
-          <cite class="text-muted">Written by Author Here</cite>
+          <h3><a href="http://www.amazon.com/gp/product/{{book.isbn}}">{{book.title}}</a></h3>
+          <cite class="text-muted">Written by {{book.author}}</cite>
 
-          <p>Book Review</p>
+          <p>{{book.review}}</p>
 
           <ul class='list-unstyled'>
             <!-- Note 4 -->
