@@ -15,7 +15,10 @@
     return {
       restrict: 'E', // E stands for element
       templateUrl: 'partials/book-genres.html',
-      replace: true
+      replace: true,
+      scope: {
+        genres: '='
+      }
     };
   })
 
@@ -34,7 +37,7 @@
       replace: true,
       controller: function(){
         this.showForm = false;
-        this.book = {};
+        this.book = {genres:{}};
       },
       controllerAs: 'reviewFormCtrl',
       // setting scope because you want access to parent controller (ReadingListController) information; you lose it when you declare a separate controller within the directive
