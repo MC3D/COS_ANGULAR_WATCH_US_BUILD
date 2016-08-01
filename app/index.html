@@ -20,8 +20,9 @@
   <h1>ANGULAR READING LIST OF AWESOME</h1>
 
   <div class="row" ng-controller='ReadingListController as readingListCtrl'>
-    <button class="btn btn-default">Create Review</button>
+    <button class="btn btn-default" ng-click='reviewFormCtrl.showForm = true'>Create Review</button>
     <hr />
+    <!-- you have access to reviewFromCtrl anywhere inside the parent element of review-form -->
     <review-form ng-show='reviewFormCtrl.showForm'></review-form>
     <hr />
 
