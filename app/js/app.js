@@ -25,6 +25,14 @@
       templateUrl: 'partials/book-cover.html',
       replace: true
     };
+  })
+
+  .directive('reviewForm', function(){
+    return {
+      restrict: 'E',
+      templateUrl: 'partials/review-form.html',
+      replace: true
+    };
   });
 
   var genres = [ 'fable', 'fantasy', 'fiction', 'folklore', 'horror', 'humor', 'legend', 'metafiction', 'mystery', 'mythology', 'non-fiction', 'poetry' ];
