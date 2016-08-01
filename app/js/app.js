@@ -8,7 +8,7 @@
 
   app.controller('ReadingListController', function(){
     this.books = books;
-    this.genre = genres;
+    this.genres = genres;
   });
 
   var genres = [ 'fable', 'fantasy', 'fiction', 'folklore', 'horror', 'humor', 'legend', 'metafiction', 'mystery', 'mythology', 'non-fiction', 'poetry' ];
