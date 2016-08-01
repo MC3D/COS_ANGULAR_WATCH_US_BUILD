@@ -1,6 +1,5 @@
-<ul class='list-unstyled'>
-  <li>
-    <!-- ng-show = 'state' is equivalent to ng-show = 'state === true' -->
-    <span class='label label-primary' ng-repeat='(genre, state) in genres' ng-show='state'>{{genre}}</span>
+<ul class="list-unstyled">
+  <li ng-repeat="(genre, state) in genres" ng-show="state">
+    <span class="label label-primary">{{genre}}</span>
   </li>
 </ul>

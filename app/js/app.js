@@ -1,21 +1,18 @@
-/* globals angular */
-
 (function(){
   'use strict';
 
-  // Declare app level module which depends on views, and components
   angular.module('readingList', [])
 
   .controller('ReadingListController', function(){
     this.books = books;
     this.genres = genres;
+    this.showForm = false;
   })
 
   .directive('bookGenres', function(){
     return {
-      restrict: 'E', // E stands for element
+      restrict: 'E',
       templateUrl: 'partials/book-genres.html',
-      replace: true,
       scope: {
         genres: '='
       }
@@ -36,17 +33,22 @@
       templateUrl: 'partials/review-form.html',
       replace: true,
       controller: function(){
-        this.showForm = false;
         this.book = {genres:{}};
+
+        this.addReview = function(form){
+          books.push(this.book);
+          this.book = {genres:{}};
+          form.$setPristine();
+        };
       },
       controllerAs: 'reviewFormCtrl',
-      // setting scope because you want access to parent controller (ReadingListController) information; you lose it when you declare a separate controller within the directive
       scope: {
         books: '=',
         genres: '='
       }
     };
   });
+
 
   var genres = [ 'fable', 'fantasy', 'fiction', 'folklore', 'horror', 'humor', 'legend', 'metafiction', 'mystery', 'mythology', 'non-fiction', 'poetry' ];
 

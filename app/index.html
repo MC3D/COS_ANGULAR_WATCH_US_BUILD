@@ -2,7 +2,10 @@
 <!--[if lt IE 7]>      <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html lang="en" ng-app="readingList" class="no-js"> <!--<![endif]-->
+<!--[if gt IE 8]><!-->
+<html lang="en" ng-app="readingList" class="no-js">
+<!--<![endif]-->
+
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -15,32 +18,9 @@
   <link rel="stylesheet" href="css/app.css">
   <!-- <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script> -->
 </head>
+
 <body ng-app="readingList">
-
-  <h1>ANGULAR READING LIST OF AWESOME</h1>
-
-  <div class="row" ng-controller='ReadingListController as readingListCtrl'>
-    <button class="btn btn-default" ng-click='reviewFormCtrl.showForm = !reviewFormCtrl.showForm'>{{reviewFormCtrl.showForm ? 'Cancel' : 'Create Review'}}</button>
-    <hr />
-    <!-- you have access to reviewFromCtrl anywhere inside the parent element of review-form -->
-    <review-form books='readingListController.books' genres='readingListController.genres' ng-show='reviewFormCtrl.showForm'></review-form>
-    <hr />
-
-    <ul class="list-unstyled col-sm-8">
-      <li class="book row" ng-repeat='book in readingListCtrl.books'>
-        <book-cover></book-cover>
-        <div class="col-sm-9">
-          <h3><a href="http://www.amazon.com/gp/product/{{book.isbn}}">{{book.title}}</a></h3>
-          <cite class="text-muted">Written by {{book.author}}</cite>
-
-          <p>{{book.review}}</p>
-
-          <book-genres genres='book.genres'></book-genres>
-
-        </div>
-      </li>
-    </ul>
-  </div>
+  <div class="container" ng-include="'partials/app.html'"></div>
 
 
   <!--[if lt IE 7]>
@@ -58,4 +38,5 @@
   <script src="components/version/version-directive.js"></script>
   <script src="components/version/interpolate-filter.js"></script>
 </body>
+
 </html>
